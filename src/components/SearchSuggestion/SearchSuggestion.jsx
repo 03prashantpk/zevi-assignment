@@ -21,7 +21,7 @@ const SearchSuggestion = ({ showSuggestions, typedInput }) => {
         const fetchMenClothing = async () => {
             try {
                 const response = await fetch(
-                    "https://fakestoreapi.com/products/category/men's clothing?limit=5"
+                    "https://fakestoreapi.com/products?limit=5"
                 );
                 const data = await response.json();
                 setMenClothing(data);
@@ -51,7 +51,7 @@ const SearchSuggestion = ({ showSuggestions, typedInput }) => {
         showSuggestions && (
             <div className="Search-Suggestion">
                 <div className="box">
-                    <p>Latest Trends - Women's Clothing</p>
+                    <p>Latest Trends</p>
                     <div className="cards-suggestions">
                         {womenClothing.map((item, index) => (
                             <div className="card" key={item.id}>
@@ -60,7 +60,7 @@ const SearchSuggestion = ({ showSuggestions, typedInput }) => {
                             </div>
                         ))}
                     </div>
-                    <p>Latest Trends - Men's Clothing</p>
+                    <p>Popular Suggestions</p>
                     <div className="list-suggestions">
                         <ul>
                             {menClothing.map((item) => (
