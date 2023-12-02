@@ -1,8 +1,9 @@
-.Search-Bar {
+@mixin search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+
   .search-box {
     width: 50%;
     display: flex;
@@ -12,19 +13,41 @@
     background-color: #fff;
     border-radius: 12px;
     padding: 6px 20px;
+
+    @media screen and (max-width: 480px) {
+      width: 90%;
+      padding: 4px 10px;
+    }
+
     input {
       width: 100%;
       padding: 10px;
       border: none;
       font-size: 22px;
+
+      @media screen and (max-width: 480px) {
+        font-size: 17px;
+        padding: 8px;
+      }
+
       &:focus {
         outline: none;
         border-left: 2px solid #262626;
       }
     }
-    img{
+
+    img {
       width: 50px;
       height: 50px;
+
+      @media screen and (max-width: 480px) {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
+}
+
+.Search-Bar {
+  @include search-bar;
 }

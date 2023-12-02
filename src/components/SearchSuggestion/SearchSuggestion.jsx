@@ -1,46 +1,77 @@
-import './SearchSuggestion.scss';
+import React, { useState, useEffect } from "react";
+import "./SearchSuggestion.scss";
 
-const SearchSuggestion = ({ suggestions, onSuggestionSelected }) => {
+const SearchSuggestion = ({ showSuggestions, typedInput }) => {
+    const [womenClothing, setWomenClothing] = useState([]);
+    const [menClothing, setMenClothing] = useState([]);
+
+    useEffect(() => {
+        const fetchWomenClothing = async () => {
+            try {
+                const response = await fetch(
+                    "https://fakestoreapi.com/products/category/women's clothing?limit=5"
+                );
+                const data = await response.json();
+                setWomenClothing(data);
+            } catch (error) {
+                console.error("Error fetching women's clothing:", error);
+            }
+        };
+
+        const fetchMenClothing = async () => {
+            try {
+                const response = await fetch(
+                    "https://fakestoreapi.com/products/category/men's clothing?limit=5"
+                );
+                const data = await response.json();
+                setMenClothing(data);
+            } catch (error) {
+                console.error("Error fetching men's clothing:", error);
+            }
+        };
+
+        fetchWomenClothing();
+        fetchMenClothing();
+    }, [showSuggestions]);
+
+    const truncateString = (str, wordsCount, index) => {
+        const words = str.split(' ');
+        let truncatedWords;
+
+        if (index === 0) {
+            truncatedWords = words.slice(1, wordsCount + 1);
+        } else {
+            truncatedWords = words.slice(0, wordsCount);
+        }
+
+        return truncatedWords.join(' ');
+    };
+
     return (
-        <div className="Search-Suggestion">
-            <div className='box'>
-                <p>Latest Trends</p>
-                <div className="cards-suggestions">
-                    <div className="card">
-                        <img src="https://picsum.photos/200" alt="suggestion" />
-                        <p>White Formal Suit</p>
+        showSuggestions && (
+            <div className="Search-Suggestion">
+                <div className="box">
+                    <p>Latest Trends - Women's Clothing</p>
+                    <div className="cards-suggestions">
+                        {womenClothing.map((item, index) => (
+                            <div className="card" key={item.id}>
+                                <img src={item.image} alt={item.title} />
+                                <p title={item.title}>{truncateString(item.title, 4, index)}</p>
+                            </div>
+                        ))}
                     </div>
-                    <div className="card">
-                        <img src="https://picsum.photos/201" alt="suggestion" />
-                        <p>Line Jumpsuite</p>
+                    <p>Latest Trends - Men's Clothing</p>
+                    <div className="list-suggestions">
+                        <ul>
+                            {menClothing.map((item) => (
+                                <li key={item.id}>{item.title}</li>
+                            ))}
+                        </ul>
                     </div>
-                    <div className="card">
-                        <img src="https://picsum.photos/203" alt="suggestion" />
-                        <p>Patter Dress</p>
-                    </div>
-                    <div className="card">
-                        <img src="https://picsum.photos/204" alt="suggestion" />
-                        <p>Leather Jacket</p>
-                    </div>
-                    <div className="card">
-                        <img src="https://picsum.photos/205" alt="suggestion" />
-                        <p>Suit With Puffed Sleeves</p>
-                    </div>
-                </div>
-                <p>Popular Suggestions</p>
-                <div className="list-suggestions">
-                    <ul>
-                        <li>Striped Shirt Dress</li>
-                        <li>Leather Jacket</li>
-                        <li>Formal Dress</li>
-                        <li>Traditional Indian</li>
-                        <li>Puffed Sleeves</li>
-                    </ul>
                 </div>
             </div>
-
-        </div>
-    )
-}
+        )
+    );
+};
 
 export default SearchSuggestion;
