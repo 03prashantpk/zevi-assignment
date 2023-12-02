@@ -1,0 +1,53 @@
+.Search-Suggestion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 2%;
+  .box {
+    width: 65%;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    p{
+        margin: 20px 0;
+        font-size: 18px;
+    }
+    .cards-suggestions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 25px;
+      .card {
+        width: 100%;
+        img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 4px;
+        }
+        p{
+            margin: 8px  0;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+      }
+    }
+    .list-suggestions{
+        ul{
+            list-style: none;
+            li{
+                margin: 10px 0;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+        }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background: linear-gradient(rgba(255, 255, 255, 0.297), rgba(255, 255, 255, 0.297)), url('/bg.jpg');
+    background-size: cover;
+    background-position-y: 25%;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

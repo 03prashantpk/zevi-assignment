@@ -1,0 +1,30 @@
+.Search-Bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .search-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 6px 20px;
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      font-size: 22px;
+      &:focus {
+        outline: none;
+        border-left: 2px solid #262626;
+      }
+    }
+    img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
