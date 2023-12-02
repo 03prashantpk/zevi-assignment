@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Search from './components/SearchBarPage/Search';
 import './App.scss';
 import Navbar from './components/Navbar/Navbar';
-import Products from './components/Products/Product';
+import SearchResults from './components/SearchResults/SearchResults';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Search />} />
-          <Route path="/products" element={<Products/>} />
+          <Route path="/products" element={<SearchResults />} />
         </Routes>
       </div>
     </Router>

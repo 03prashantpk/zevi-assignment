@@ -55,7 +55,7 @@ const SearchSuggestion = ({ showSuggestions, typedInput }) => {
                     <div className="cards-suggestions">
                         {womenClothing.map((item, index) => (
                             <div className="card" key={item.id}>
-                                <img src={item.image} alt={item.title} />
+                                <img src={item.image} alt={item.title} loading="lazy" />
                                 <p title={item.title}>{truncateString(item.title, 4, index)}</p>
                             </div>
                         ))}

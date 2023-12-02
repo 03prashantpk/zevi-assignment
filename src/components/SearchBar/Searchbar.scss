@@ -1,0 +1,48 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin input-styles {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.Search-bar {
+  @include flex-center;
+  width: 100%;
+
+  div {
+    @include flex-center;
+    width: 35%;
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 8px;
+    gap: 4px;
+    border: 1px solid rgba(38, 38, 38, 0.101);
+
+    input {
+      @include input-styles;
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    div {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    div {
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.Sidebar{
+    width: 20%;
+    height: calc(100vh - 94px);
+    padding: 10px 20px;
+    .filter{
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #242424;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        padding: 20px 0px;
+        &:hover{
+            cursor: pointer;
+        }
+       
+        i{
+            font-size: 16px;
+            transform: rotate(180deg);
+        }
+    }
+    .page-head{
+        font-size: 32px;
+        letter-spacing: 1px;
+        margin-bottom: 12% ;
+    }
+    
+    ul{
+        list-style: none;
+        border-bottom: #24242420 1px solid;
+        padding: 20px 0px;
+        padding-top: 5px;
+        display: none;
+        &:last-child{
+            border-bottom: none;
+        }
+        li{
+            line-height: 2.2rem;
+            &:hover{
+                cursor: pointer;
+            }
+            label{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            input[type="checkbox"]{
+                height: 18px;
+                width: 18px;
+                margin-right: 10px;
+            }
+            i{
+                color: #ffd12d;
+                margin-right: 5px;
+            }
+        }
+        &.show{
+            display: block;
+            height: auto;
+            transition: height 0.10s ease-in-out;
+          
+        }
+    }
+
+}

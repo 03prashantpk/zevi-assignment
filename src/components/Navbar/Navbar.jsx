@@ -1,13 +1,18 @@
+import SearchBar from "../SearchBar/SearchBar";
 import "./Navbar.scss";
 import Logo from '/logo.png';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+    const location = useLocation();
+    const isProductPage = location.pathname.includes('/product');
+    // alert(isProductPage);
+
     return (
         <nav className="Navbar">
-            <NavLink to="/products" activeClassName="active">Products</NavLink>
-           <img src={Logo} alt="" />
+            {isProductPage && <SearchBar />}
+            <img src={Logo} alt="logo" />
         </nav>
     );
 }

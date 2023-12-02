@@ -1,0 +1,24 @@
+.Products{
+    width: 80%;
+    height: calc(100vh - 94px);
+    
+    .products-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+        margin-top: 5%;
+        flex-wrap: wrap;
+        .card{
+            width: 25%;
+            img{
+                width: 230px;
+                height: 320px;
+                border-radius: 4px;
+            }
+            .card-body{
+                margin: 20px 0px;
+            }
+        }
+    }
+}
