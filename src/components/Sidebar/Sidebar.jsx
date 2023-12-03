@@ -106,52 +106,23 @@ const Sidebar = ({ updateFilters }) => {
                 Rating <i className={toggleRating ? 'fad fa-chevron-up' : 'fad fa-chevron-down'}></i>
             </p>
             <ul className={toggleRating && "show"}>
-                <li>
-                    <input
-                        type="checkbox"
-                        id='5star'
-                        onChange={() => handleRatingSelection('5 Star')}
-                        checked={selectedItems.rating.includes('5 Star')}
-                    />
-                    <label htmlFor="5star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </label>
-                </li>
-                <li>
-                    <input
-                        type="checkbox"
-                        id='4star'
-                        onChange={() => handleRatingSelection('4 Star')}
-                        checked={selectedItems.rating.includes('4 Star')}
-                    />
-                    <label htmlFor="4star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </label>
-                </li>
-                <li>
-                    <input
-                        type="checkbox"
-                        id='3star'
-                        onChange={() => handleRatingSelection('3 Star')}
-                        checked={selectedItems.rating.includes('3 Star')}
-                    />
-                    <label htmlFor="3star">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                        <i className="far fa-star"></i>
-                    </label>
-                </li>
+                {[5, 4, 3, 2].map((rating, index) => (
+                    <li key={index}>
+                        <input
+                            type="checkbox"
+                            id={`${rating}star`}
+                            onChange={() => handleRatingSelection(rating.toString())}
+                            checked={selectedItems.rating.includes(rating.toString())}
+                        />
+                        <label htmlFor={`${rating}star`}>
+                            {Array.from({ length: 5 }, (_, i) => (
+                                <i key={i} className={i < rating ? "fas fa-star" : "far fa-star"}></i>
+                            ))}
+                        </label>
+                    </li>
+                ))}
             </ul>
+
 
             <div className='Applied' hidden>
                 <p>Selected Brand: {selectedItems.brand.join(', ')}</p>

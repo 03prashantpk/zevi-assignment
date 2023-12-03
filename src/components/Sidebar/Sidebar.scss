@@ -2,8 +2,20 @@
     width: 20%;
     height: calc(100vh - 94px);
     padding: 10px 20px;
+
+    @media screen and (max-width: 768px){
+        width: 30%;
+    }
+
+    @media screen and (max-width: 480px){
+        width: 90%;
+        height: auto;
+        padding: 10px 0px;
+    }
+
     .filter{
         font-size: 16px;
+        font-weight: 500;
         text-transform: uppercase;
         color: #242424;
         display: flex;
@@ -32,6 +44,7 @@
         padding: 20px 0px;
         padding-top: 5px;
         display: none;
+        font-weight: 300;
         &:last-child{
             border-bottom: none;
         }
@@ -54,6 +67,9 @@
             i{
                 color: #ffd12d;
                 margin-right: 5px;
+                &.far{
+                    color: #24242480;
+                }
             }
         }
         &.show{
