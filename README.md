@@ -36,7 +36,9 @@
 ## Technologies Used
 - React + Vite(CRA)
 - SCSS + Mixin (SASS)
-- Faker API (https://fakestoreapi.com/docshttps://fakerapi.it/en)
+- Faker API (https://fakestoreapi.com/docs)
+- Google Font Used - (font-family: 'Inter', sans-serif;)
+- Fontawesome - (https://fontawesome.com/start)
 
 ## Project Structure
 

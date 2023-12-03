@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './SearchBar.scss';
+import './Searchbar.scss';
 import SearchLogo from "/search.png";
 const SearchBar = () => {
     return (
