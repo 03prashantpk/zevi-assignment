@@ -23,7 +23,7 @@ const Search = () => {
     }, 5000);
   };
   document.body.style.background = "linear-gradient(rgba(255, 255, 255, 0.297), rgba(255, 255, 255, 0.297)), url('/bg.jpg')";
-
+  document.body.style.backgroundSize = "cover";
   return (
     <>
       <div className="Search-Bar">

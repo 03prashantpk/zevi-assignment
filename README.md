@@ -1,5 +1,8 @@
 # React Dev Assignment - Search App
 
+<a href="https://zevi-assignment-three.vercel.app"> Live Link </a>
+<a href="https://zevi-assignment-three.vercel.app/products"> Product List </a>
+
 ## Features
 
 1. **Search Tab with Trend Suggestions:** Clicking on the search tab reveals the latest trend suggestions for a user-friendly experience.
