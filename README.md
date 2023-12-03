@@ -2,6 +2,8 @@
 
 <a href="https://zevi-assignment-three.vercel.app"> Live Link </a>
 <br><br>
+<a href="https://zevi-assignment-prashant.netlify.app/"> Live Netlify Link </a>
+<br><br>
 <a href="https://zevi-assignment-three.vercel.app/products"> Product List </a>
 
 <!-- Image -->
