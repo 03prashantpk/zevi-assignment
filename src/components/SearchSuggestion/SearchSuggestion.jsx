@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./SearchSuggestion.scss";
+import { Link } from "react-router-dom";
 
 const SearchSuggestion = ({ showSuggestions, typedInput }) => {
     const [womenClothing, setWomenClothing] = useState([]);
@@ -68,6 +69,7 @@ const SearchSuggestion = ({ showSuggestions, typedInput }) => {
                             ))}
                         </ul>
                     </div>
+                    <Link to={`/products`}>View All</Link>
                 </div>
             </div>
         )

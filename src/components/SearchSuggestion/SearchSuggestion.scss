@@ -75,7 +75,13 @@
   
     .box {
       @include responsive-box;
-  
+      a{
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 6px;
+        background-color: #d32424
+      }
       p {
         @include responsive-text;
       }
