@@ -3,7 +3,11 @@
 <a href="https://zevi-assignment-three.vercel.app"> Live Link </a>
 <a href="https://zevi-assignment-three.vercel.app/products"> Product List </a>
 
-## Other React Projects
+<!-- Image -->
+![External Image](https://github.com/03prashantpk/zevi-assignment/blob/main/public/screen.gif)
+
+
+## Other React & Node Projects
 
 1. <a href="https://unichatapp.vercel.app/">UniChat App</a> College Chat Platform
 2. <a href="https://linkinblink.onrender.com/">LinkInBlink</a> Anonumous Chat Platform
