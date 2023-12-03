@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Sidebar.scss';
+import { HandlerNotificationBar } from '../../handlers/handlerNotificationBar';
 
 const Sidebar = ({ updateFilters }) => {
     const [toggleBrand, setToggleBrand] = useState(false);
@@ -30,6 +31,7 @@ const Sidebar = ({ updateFilters }) => {
 
         setSelectedItems({ ...selectedItems, brand: newSelectedItems });
         updateFilters('brand', brand);
+        HandlerNotificationBar('Brand Filter Applied!');
     };
 
     const handlePriceRangeSelection = (priceRange) => {
@@ -39,6 +41,7 @@ const Sidebar = ({ updateFilters }) => {
 
         setSelectedItems({ ...selectedItems, priceRange: newSelectedItems });
         updateFilters('priceRange', priceRange);
+        HandlerNotificationBar('Price Filter Applied!');
     };
 
     const handleRatingSelection = (rating) => {
@@ -48,6 +51,7 @@ const Sidebar = ({ updateFilters }) => {
 
         setSelectedItems({ ...selectedItems, rating: newSelectedItems });
         updateFilters('rating', rating);
+        HandlerNotificationBar('Rating Filter Applied!');
     };
 
     return (
@@ -57,7 +61,7 @@ const Sidebar = ({ updateFilters }) => {
             <p className='filter' onClick={toggleBrandHandler}>
                 Brand <i className={toggleBrand ? 'fad fa-chevron-up' : 'fad fa-chevron-down'}></i>
             </p>
-            <ul className={toggleBrand && "show"}>
+            <ul className={toggleBrand ? "show" : ""}>
                 <li>
                     <input
                         type="checkbox"
@@ -81,7 +85,7 @@ const Sidebar = ({ updateFilters }) => {
             <p className='filter' onClick={togglePriceHandler}>
                 Price Range <i className={togglePrice ? 'fad fa-chevron-up' : 'fad fa-chevron-down'}></i>
             </p>
-            <ul className={togglePrice && "show"}>
+            <ul className={togglePrice ? "show" : ""&& "show"}>
                 <li>
                     <input
                         type="checkbox"
@@ -105,7 +109,7 @@ const Sidebar = ({ updateFilters }) => {
             <p className='filter' onClick={toggleRatingHandler}>
                 Rating <i className={toggleRating ? 'fad fa-chevron-up' : 'fad fa-chevron-down'}></i>
             </p>
-            <ul className={toggleRating && "show"}>
+            <ul className={toggleRating ? "show" : ""}>
                 {[5, 4, 3, 2].map((rating, index) => (
                     <li key={index}>
                         <input

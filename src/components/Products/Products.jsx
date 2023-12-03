@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Products.scss';
 import { handleLikes } from '../../handlers/handleLikes';
 import { applyFilters } from '../../handlers/handleFilter';
-import { convertToIndianRupees } from '../../handlers/currencyConverter'; // Update the path accordingly
+import { convertToIndianRupees } from '../../handlers/handlerCurrencyConverter';
+import { HandlerNotificationBar } from '../../handlers/handlerNotificationBar';
 
 const Products = ({ filters }) => {
   const [products, setProducts] = useState([]);
@@ -43,6 +44,7 @@ const Products = ({ filters }) => {
 
   const toggleLiked = (id) => {
     handleLikes(id, likedItems, setLikedItems);
+    
   };
 
   return (

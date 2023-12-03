@@ -6,6 +6,7 @@ import Search from './components/SearchBarPage/Search';
 import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import SearchResults from './components/SearchResults/SearchResults';
+import NotificationBar from './components/NotificationBar/NotificationBar';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Search />} />
           <Route path="/products" element={<SearchResults />} />
         </Routes>
+        <NotificationBar />
       </div>
     </Router>
   );
