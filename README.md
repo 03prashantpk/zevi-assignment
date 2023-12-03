@@ -3,6 +3,12 @@
 <a href="https://zevi-assignment-three.vercel.app"> Live Link </a>
 <a href="https://zevi-assignment-three.vercel.app/products"> Product List </a>
 
+## Other React Projects
+
+1. <a href="https://unichatapp.vercel.app/">UniChat App</a> College Chat Platform
+2. <a href="https://linkinblink.onrender.com/">LinkInBlink</a> Anonumous Chat Platform
+
+
 ## Features
 
 1. **Search Tab with Trend Suggestions:** Clicking on the search tab reveals the latest trend suggestions for a user-friendly experience.
