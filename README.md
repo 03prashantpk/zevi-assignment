@@ -37,15 +37,21 @@
    ```bash
    git clone https://github.com/03prashantpk/zevi-assignment.git
    ```
-2. **Install Dependencies:**
+
+2. **Move to the Dir zevi-assignment**
+    ```bash
+   cd zevi-assignment
+   ```
+
+3. **Install Dependencies:**
     ```bash
     npm install
     ```
-3. **Run Application:**
+4. **Run Application:**
     ```bash
     npm run dev
     ```
-4. **Open Browser:**
+5. **Open Browser:**
     ```bash
     http://localhost:3000/
     ```
