@@ -10,6 +10,7 @@ const Products = ({ filters }) => {
   const [likedItems, setLikedItems] = useState([]);
 
   useEffect(() => {
+    // Fetching data function
     const fetchData = async () => {
       try {
         const response = await fetch('https://fakestoreapi.com/products');
@@ -20,6 +21,9 @@ const Products = ({ filters }) => {
       }
     };
 
+    document.body.style.backgroundImage = '';
+
+    // Fetch data
     fetchData();
   }, []);
 
@@ -44,7 +48,7 @@ const Products = ({ filters }) => {
 
   const toggleLiked = (id) => {
     handleLikes(id, likedItems, setLikedItems);
-    
+
   };
 
   return (
@@ -60,7 +64,7 @@ const Products = ({ filters }) => {
               ></i>
               <div className="product-details">
                 <p>View Product</p>
-            </div>
+              </div>
             </div>
             <div className="card-body">
               <p>{truncateStrings(product.title, 5)}</p>
